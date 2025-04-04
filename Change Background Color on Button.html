@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Change Background Color</h2>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+    
+    <script>
+        // Task 1: Change Background Color
+        function changeBackgroundColor() {
+            const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic List (Add & Remove Items)</h1>
+    <input type="text" id="itemInput" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+    <ul id="itemList"></ul>
+    
+    <script>
+        function addItem() {
+            let input = document.getElementById('itemInput');
+            let itemText = input.value.trim();
+            if (itemText === "") return;
+            
+            let li = document.createElement('li');
+            li.textContent = itemText;
+            
+            let removeButton = document.createElement('button');
+            removeButton.textContent = "Remove";
+            removeButton.onclick = function() {
+                li.remove();
+            };
+            
+            li.appendChild(removeButton);
+            document.getElementById('itemList').appendChild(li);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
